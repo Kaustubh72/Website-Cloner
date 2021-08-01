@@ -16,16 +16,34 @@
             <fieldset>
                           
               <label for="website">Link to Website:</label>
-              <input type="url" id="website" name="website">
+              <input type="url" id="website" name="website" placeholder="https://www.example.com" required>
                   
              </fieldset>
-           
-            <button type="submit">Clone Website</button>
+			 <fieldset>
+                          
+				<label for="path">Path to Save:</label>
+				<input type="text" id="path" name="path" placeholder="C:\" />
+					
+			   </fieldset>
+			   <br>
+            <button type="submit"><span style="font-weight: bolder;font-size: larger;">Clone Website</span></button>
             <br><br>
-            <p style="color: green;">Note: The Cloned Website will be saved in your downloads folder with the name <span style="color: blue;">Cloned</span></p>
+			<p style="color: green;">Note:
+				<ol type="1">
+					<li>If path not given, it will be cloned inside <span style="color: black; font-weight: bolder;">C:// drive</span> in Cloned folder</li>
+
+					<li>The Cloned Website will be saved in the given directory with the name <span style="color: black; font-weight: bolder;">Cloned</span></li>
+
+					<li>Remove or Rename the folder with name <span style="color: black; font-weight: bolder;">Cloned</span> present in the directory where file will be saved.</li>
+					
+					<li>Cloning might take <span style="color: black; font-weight: bolder;">60-120 seconds</span> depending upon the response from the given website</li>
+					
+				  </ol>
+			</p>
            </form>
         
 	</body> 
+	
 	<footer style="background-color: black;"><br>
 		<p style="color: aqua;text-align: center;">Made with <a style="color: red;">❤</a> from <a style="color: red;text-decoration:none;" href="https://kaustubhsingh.herokuapp.com/">Kaustubh</a></p><br>
 	</footer>
