@@ -4,6 +4,7 @@
   "description": "A script which can create a clone of any website",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "node index.js"
   },
   "repository": {
