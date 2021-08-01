@@ -1,0 +1,32 @@
+{
+  "name": "website-cloner",
+  "version": "1.0.0",
+  "description": "A script which can create a clone of any website",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kaustubh72/Website-Cloner.git"
+  },
+  "keywords": [
+    "NodeJS",
+    "Cloning",
+    "Website",
+    "Only",
+    "For",
+    "Learning",
+    "Purpose"
+  ],
+  "author": "Kaustubh Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kaustubh72/Website-Cloner/issues"
+  },
+  "homepage": "https://github.com/Kaustubh72/Website-Cloner#readme",
+  "dependencies": {
+    "website-scraper": "^4.2.3",
+    "website-scraper-puppeteer": "^0.1.5"
+  }
+}
