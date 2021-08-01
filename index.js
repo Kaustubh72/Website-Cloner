@@ -1,4 +1,3 @@
-// index.js
 const scrape = require('website-scraper');
 const PuppeteerPlugin = require('website-scraper-puppeteer');
 const path = require('path');
@@ -12,13 +11,20 @@ app.set('view engine', 'html');
 
 
 app.use('/',express.static(path.join(__dirname,'views')))
+
+
 app.use(bodyparser.json())
 
 app.use(bodyparser.urlencoded({
     extended: true
   }));
 
+
   app.get("/",(req,res) =>{
+    res.render("index.html")
+});
+
+app.get("/clone",(req,res) =>{
     res.render("index.html")
 });
 
@@ -29,31 +35,36 @@ app.post('/clone', async (req,res) => {
     const pts= path_to_save+"\\cloned";
     //return res.json({url : uri,path :path_to_save})
     //return res.json({url : uri});
+    try{
     await scrape({
-        // Provide the URL(s) of the website(s) that you want to clone
-        // In this example, you can clone the Our Code World website
+       
         urls: [uri],
-        // Specify the path where the content should be saved
-        // In this case, in the current directory inside the cloned dir
+       
         directory: pts,
-        // Load the Puppeteer plugin
+        
         plugins: [ 
             new PuppeteerPlugin({
                 launchOptions: { 
                     // If you set  this to true, the headless browser will show up on screen
                     headless: true
-                }, /* optional */
+                },
                 scrollToBottom: {
                     timeout: 10000, 
                     viewportN: 10 
-                } /* optional */
+                } 
             })
         ]
+        
     });
+        }
+    catch(e)
+        {
+            res.json({Error : e+" Cloned directory already exists either in C:\ drive or in given folder"});
+        }
 
     res.render("success.html")
     
-})
+});
 
 
 app.listen(process.env.PORT || 3000, () =>{
