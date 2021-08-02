@@ -1,5 +1,5 @@
 # How to Use
-1. download the repository and Extract the files.
+1. Download the repository and Extract the files.
 2. Open Command Prompt and change directory to the repository files (where *index.js* file is present)
 3.  Type these Commands <br>
   ``` npm install```<br>
